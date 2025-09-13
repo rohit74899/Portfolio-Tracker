@@ -1,0 +1,9 @@
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+    	<property name="hibernate.connection.username">your_user</property>
+    	<property name="hibernate.connection.password">your_pass</property>
+    	<property name="hibernate.hbm2ddl.auto">update</property>
+	</session-factory>
+</hibernate-configuration>
