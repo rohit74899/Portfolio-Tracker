@@ -22,10 +22,18 @@ public class EntityMasterDao {
 		
 		return e;
 		
-		
 	}
 	
 	public void insertEntity() {
+		System.out.println("== Register Client ==");
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		
+		int id;
+		String username;
+		String password;
+		String email;
+		
 		
 	}
 	
