@@ -15,6 +15,8 @@ Currently implementing Hibernate CRUD operations as foundation, will extend to S
 - Hibernate utility class (`HibernateUtil`) with reusable static `SessionFactory`.  
 - CRUD operations for:  
   - `Entity_Master` (user details)  
+        - `Entity_Master_SEQ` (Sequence) -- created to Assign unique ID's to Users
+        - `Trg_Entity_Master` (Trigger)  -- created to Auto increament sequence
   - `Portfolio_Txn` (portfolio transactions)  
 - Database schema setup with primary keys & indexing.  
 - Git branching strategy: `main` (stable), `dev` (integration), `feature/*` (individual tasks).  
