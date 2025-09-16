@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.Portfolio.entity.Entity_Master;
 import org.Portfolio.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class EntityMasterDao {
 	
@@ -28,13 +29,29 @@ public class EntityMasterDao {
 		System.out.println("== Register Client ==");
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
+		Scanner sc =new Scanner(System.in);
 		
-		int id;
-		String username;
-		String password;
-		String email;
+		System.out.println("SET user name :");
+		String username =sc.nextLine();
 		
+		System.out.println("SET user password :");
+		String password =sc.nextLine();
 		
+		System.out.println("Enter email Id:");
+		String email =sc.nextLine();
+		
+		Entity_Master user=new Entity_Master();
+		user.set_username(username);
+		user.set_password(password);
+		user.set_email(email);
+		
+		Transaction transaction= session.beginTransaction();
+		
+		session.persist(user);
+		
+		transaction.commit();
+		
+		System.out.println(user +"Registered");
 	}
 	
 	public void updateEntity() {
