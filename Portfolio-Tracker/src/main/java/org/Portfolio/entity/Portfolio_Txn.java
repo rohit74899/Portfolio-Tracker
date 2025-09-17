@@ -1,15 +1,27 @@
 package org.Portfolio.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "PORTFOLIO_TXN")
 public class Portfolio_Txn {
 	@Id
+	@Column(name = "pt_id")
 	int Txn_id;
+	
+	@Column(name = "pt_user_id")
 	int userid;
+	
+	@Column(name = "pt_symbol")
 	String symbol;
+	
+	@Column(name = "pt_quantity")
 	int quantity;
+	
+	@Column(name = "pt_buy_price")
 	int buyprice;
 
 	public int get_Txn_id() {

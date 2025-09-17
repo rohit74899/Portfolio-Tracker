@@ -1,9 +1,24 @@
 package org.Portfolio.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Entity_Master")
 public class Entity_Master {
+	@Id
+	@Column(name = "user_id")
 	int id;
+	
+	@Column(name = "username")
 	String username;
+	
+	@Column(name = "passwd")
 	String password;
+	
+	@Column(name = "email")
 	String email;
 	
 	
