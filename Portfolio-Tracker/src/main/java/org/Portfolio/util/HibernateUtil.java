@@ -24,10 +24,11 @@ public class HibernateUtil {
 					
 			Metadata metadata =metaSources.buildMetadata();
 			
-			sessionfactory =metadata.buildSessionFactory();
+			sessionfactory = metadata.buildSessionFactory();
 		}
 		catch(Exception e) {
 			System.out.println("Error While Creating SessionFactory !!");
+			e.printStackTrace();
 		}
 	}
 	
