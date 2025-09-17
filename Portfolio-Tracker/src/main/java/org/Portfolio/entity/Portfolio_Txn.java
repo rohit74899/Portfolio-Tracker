@@ -1,6 +1,11 @@
 package org.Portfolio.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Portfolio_Txn {
+	@Id
 	int Txn_id;
 	int userid;
 	String symbol;
