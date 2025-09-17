@@ -21,6 +21,7 @@ public class EntityMasterDao {
 		
 		Entity_Master e=session.get(Entity_Master.class, id);
 		
+		System.out.println(e);
 		return e;
 		
 	}
