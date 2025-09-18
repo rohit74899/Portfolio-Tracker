@@ -52,14 +52,27 @@ public class EntityMasterDao {
 		
 		transaction.commit();
 		
+		session.refresh(user);
+		
 		System.out.println(user +"Registered");
 	}
 	
 	public void updateEntity() {
 		
+		
 	}
 	
 	public void deleteEntity() {
+		System.out.println("== Register Client ==");
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		Entity_Master user = getEntityData();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		session.remove(user);
+		
+		transaction.commit();
 		
 	}
 }

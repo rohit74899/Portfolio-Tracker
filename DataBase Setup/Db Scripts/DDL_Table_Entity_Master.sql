@@ -12,3 +12,5 @@ MODIFY user_id NUMBER NOT NULL;
 
 Alter table Entity_Master
 Add CONSTRAINT Pk_Entity PRIMARY KEY (user_id,username);
+
+

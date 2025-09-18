@@ -10,7 +10,8 @@ public class App
         System.out.println( "== Welcome to Portfolio Tracker ==" );
         
         EntityMasterDao dd= new EntityMasterDao();
-        //dd.insertEntity();
-        dd.getEntityData();        
+        dd.insertEntity();
+        
+        //dd.deleteEntity();
     }
 }

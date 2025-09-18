@@ -2,15 +2,20 @@ package org.Portfolio.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Entity_Master")
 public class Entity_Master {
 	@Id
+	@GeneratedValue(strategy  = GenerationType.SEQUENCE ,generator = "entity_master_seq" )
+	@SequenceGenerator(name = "entity_master_seq"  ,sequenceName = "entity_master_seq" , allocationSize = 1)
 	@Column(name = "user_id")
-	int id;
+	Integer id;
 	
 	@Column(name = "username")
 	String username;
@@ -22,11 +27,11 @@ public class Entity_Master {
 	String email;
 	
 	
-	public int get_id() {
+	public Integer get_id() {
 		return this.id;
 	}
 	
-	public void set_id(int id) {
+	public void set_id(Integer id) {
 		this.id = id;
 	}
 	

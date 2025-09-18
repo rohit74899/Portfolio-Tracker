@@ -27,3 +27,10 @@ Currently implementing Hibernate CRUD operations as foundation, will extend to S
 - Integrate with Spring Boot for REST APIs.  
 - Build user authentication & role-based access.  
 - Add frontend dashboard (React or Thymeleaf). 
+
+
+
+
+## important Resources:
+## Annotations 
+- https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html
