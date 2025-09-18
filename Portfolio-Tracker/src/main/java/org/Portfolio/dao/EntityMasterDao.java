@@ -59,6 +59,31 @@ public class EntityMasterDao {
 	
 	public void updateEntity() {
 		
+		System.out.println("== Register Client ==");
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		Transaction transaction =session.beginTransaction();
+		Scanner sc =new Scanner(System.in);
+		System.out.println("== Update User ==");
+		Entity_Master user = getEntityData();
+		
+		System.out.println("Enter New Username (Leave Blank to Keep Old)");
+		String name=sc.nextLine();
+		if(!name.isEmpty()) user.set_username(name);
+		
+		System.out.println("Enter New Password (Leave Blank to Keep Old)");
+		String password=sc.nextLine();
+		if(!name.isEmpty()) user.set_username(password);
+		
+		System.out.println("Enter New email (Leave Blank to Keep Old)");
+		String email=sc.nextLine();
+		if(!name.isEmpty()) user.set_username(email);
+		
+		session.merge(user);
+		
+		transaction.commit();
+		session.close();
+		
 		
 	}
 	
