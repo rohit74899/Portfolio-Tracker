@@ -69,21 +69,24 @@ public class EntityMasterDao {
 		
 		System.out.println("Enter New Username (Leave Blank to Keep Old)");
 		String name=sc.nextLine();
-		if(!name.isEmpty()) user.set_username(name);
+		if(name.isEmpty() || name =="") user.set_username(user.get_username());
+		else user.set_username(name);
 		
 		System.out.println("Enter New Password (Leave Blank to Keep Old)");
 		String password=sc.nextLine();
-		if(!name.isEmpty()) user.set_username(password);
+		if(password.isEmpty() || password=="") user.set_password(user.get_password());
+		else user.set_password(password);
 		
 		System.out.println("Enter New email (Leave Blank to Keep Old)");
 		String email=sc.nextLine();
-		if(!name.isEmpty()) user.set_username(email);
+		if(email.isEmpty() || email=="") user.set_email(user.get_email());
+		else user.set_email(email);
 		
 		session.merge(user);
 		
 		transaction.commit();
 		session.close();
-		
+		System.out.println("Updated Client Details (New Details): "+user);
 		
 	}
 	
