@@ -56,6 +56,13 @@ public class Portfolio_Txn {
 		this.quantity = quantity;
 	}
 	
+	public int get_buyPirce() {
+		return this.buyprice;
+	}
+	
+	public void set_buyPrice(int buyprice) {
+		this.buyprice = buyprice;
+	}
 	@Override
 	public String toString() {
 		return "User ["+this.Txn_id+ " "+this.userid+" "+this.symbol+" "+this.quantity+""+this.buyprice+"]";

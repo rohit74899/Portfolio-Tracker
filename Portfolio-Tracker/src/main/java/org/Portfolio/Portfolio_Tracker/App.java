@@ -1,6 +1,7 @@
 package org.Portfolio.Portfolio_Tracker;
 
 import org.Portfolio.dao.EntityMasterDao;
+import org.Portfolio.dao.PortfolioTxnDao;
 import org.Portfolio.util.HibernateUtil;
 
 public class App 
@@ -13,6 +14,12 @@ public class App
         //dd.insertEntity();
         
         //dd.deleteEntity();
-        dd.updateEntity();
+        //dd.updateEntity();
+        
+        
+        PortfolioTxnDao tt=new PortfolioTxnDao();
+        
+        tt.insert_PortTxn();
+        
     }
 }
