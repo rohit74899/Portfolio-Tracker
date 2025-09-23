@@ -3,6 +3,8 @@ package org.Portfolio.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,10 +25,6 @@ public class Portfolio_Txn {
 	
 	@Column(name = "pt_buy_price")
 	int buyprice;
-
-	public int get_Txn_id() {
-		return this.Txn_id;
-	}
 	
 	public void set_Txn_id(int Txn_id) {
 		this.Txn_id = Txn_id;
