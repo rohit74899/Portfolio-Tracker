@@ -21,7 +21,8 @@ public class App
         
         //tt.insert_PortTxn();
         
-        tt.delete_PortTxnById();
+        //tt.delete_PortTxnById();
+        tt.update_PortTxn();
         
     }
 }

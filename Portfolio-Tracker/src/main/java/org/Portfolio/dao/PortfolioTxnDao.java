@@ -54,6 +54,50 @@ public class PortfolioTxnDao {
 	}
 	
 	public void update_PortTxn() {
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		Scanner sc=new Scanner(System.in);
+		Transaction txn = session.beginTransaction();
+		
+		Portfolio_Txn port_data= get_PortTxnById();
+		
+		System.out.println("Enter new Symbol/Scrip ID: ");
+		String symbol =sc.nextLine();
+		if(symbol==null || symbol =="") {
+			port_data.set_symbol(port_data.get_symbol());
+		}
+		else {
+			port_data.set_symbol(symbol);
+		}
+		
+		System.out.println("Enter new Quantity: ");
+		String quantity =sc.nextLine();
+		if(quantity ==null ||quantity =="") {
+			port_data.set_quantity(port_data.get_quantity());
+		}
+		else {
+			int quant=Integer.parseInt(quantity);
+			port_data.set_quantity(quant);
+
+		}
+		
+		System.out.println("Enter new BuyPrice ID: ");
+		String buyprice =sc.nextLine();
+		if(buyprice ==null ||buyprice =="") {
+			port_data.set_buyPrice(port_data.get_buyPirce());
+		}
+		else {
+			int buyp=Integer.parseInt(buyprice);
+			port_data.set_buyPrice(buyp);
+
+		}
+		
+		session.merge(port_data);
+		
+		txn.commit();
+		
+		System.out.println("Updated Data: "+port_data);
+		
 		
 	}
 	
