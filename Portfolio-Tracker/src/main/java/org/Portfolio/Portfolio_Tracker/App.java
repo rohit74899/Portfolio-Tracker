@@ -19,7 +19,9 @@ public class App
         
         PortfolioTxnDao tt=new PortfolioTxnDao();
         
-        tt.insert_PortTxn();
+        //tt.insert_PortTxn();
+        
+        tt.delete_PortTxnById();
         
     }
 }

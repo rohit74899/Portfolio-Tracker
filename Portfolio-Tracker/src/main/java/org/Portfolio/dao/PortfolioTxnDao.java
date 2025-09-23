@@ -58,7 +58,18 @@ public class PortfolioTxnDao {
 	}
 	
 	public void delete_PortTxnById() {
+		Session session= HibernateUtil.getSessionFactory().openSession();
 		
+		Scanner sc=new Scanner(System.in);
+		
+		Portfolio_Txn port_data= get_PortTxnById();
+		
+		Transaction txn=session.beginTransaction();
+		
+		session.remove(port_data);
+		
+		txn.commit();
+		System.out.println(port_data+" Deleted From DB");
 	}
 	
 	public Portfolio_Txn get_PortTxnByUser() {
