@@ -29,7 +29,6 @@ public class Entity_Master {
 	String email;
 	
 	@OneToMany(mappedBy="userid")
-	//@OneToMany
 	List<Portfolio_Txn> Portfolio_details;
 	
 	
