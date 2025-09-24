@@ -22,8 +22,15 @@ public class PortfolioTxnDao {
 		System.out.println("Enter txn_id :");
 		int TxnId = sc.nextInt(); sc.nextLine();
 		
-		System.out.println("Enter user_id :");
-		int userId = sc.nextInt(); sc.nextLine();
+//		System.out.println("Enter user_id :");
+//		int userId = sc.nextInt(); sc.nextLine();
+		
+		Entity_Master entity= new EntityMasterDao().getEntityData();
+		if(entity == null) {
+			System.out.println("No User Found In the System!!");
+			session.close();
+			return;
+		}
 		
 		System.out.println("Enter Symbol name :");
 		String symbol =sc.nextLine();
@@ -37,7 +44,7 @@ public class PortfolioTxnDao {
 		Portfolio_Txn txn= new Portfolio_Txn();
 		
 		txn.set_Txn_id(TxnId);
-		txn.set_userid(userId);
+		txn.set_userid(entity);
 		txn.set_symbol(symbol);
 		txn.set_quantity(quantity);
 		txn.set_buyPrice(buyprice);

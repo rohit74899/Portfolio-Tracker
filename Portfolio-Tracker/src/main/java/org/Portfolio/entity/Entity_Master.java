@@ -1,5 +1,6 @@
 package org.Portfolio.entity;
 
+import java.util.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,19 @@ public class Entity_Master {
 	@Column(name = "email")
 	String email;
 	
-
+	@OneToMany(mappedBy="userid")
+	//@OneToMany
+	List<Portfolio_Txn> Portfolio_details;
+	
+	
+	public List<Portfolio_Txn> getPortfolio(){
+		return Portfolio_details;
+	};
+	
+	public void setPortfolio(List<Portfolio_Txn> portfolio) {
+		this.Portfolio_details=portfolio;
+	}
+	
 	public Integer get_id() {
 		return this.id;
 	}

@@ -14,8 +14,10 @@ public class Portfolio_Txn {
 	@Column(name = "pt_id")
 	int Txn_id;
 	
-	@Column(name = "pt_user_id")
-	int userid;
+	
+	@ManyToOne
+	@JoinColumn(name ="pt_user_id" ,referencedColumnName="user_id")//FK Column
+	Entity_Master userid;//Referencing to Entity Master
 	
 	@Column(name = "pt_symbol")
 	String symbol;
@@ -30,11 +32,11 @@ public class Portfolio_Txn {
 		this.Txn_id = Txn_id;
 	}
 	
-	public int get_userid() {
+	public Entity_Master get_userid() {
 		return this.userid;
 	}
 	
-	public void set_userid(int userid) {
+	public void set_userid(Entity_Master userid) {
 		this.userid = userid;
 	}
 	
