@@ -29,7 +29,7 @@ public class Entity_Master {
 	String email;
 	
 	@OneToMany(mappedBy="userid")
-	List<Portfolio_Txn> Portfolio_details;
+	List<Portfolio_Txn> Portfolio_details=new ArrayList<>();
 	
 	
 	public List<Portfolio_Txn> getPortfolio(){
@@ -74,7 +74,7 @@ public class Entity_Master {
 	
 	@Override
 	public String toString() {
-		return "User ["+this.id+ " "+this.username+" "+this.email+" "+this.password+"]";
+		return "User ["+this.id+ " "+this.username+" "+this.email+" "+this.password+" "+this.getPortfolio()+"]";
 	}
 	
 }

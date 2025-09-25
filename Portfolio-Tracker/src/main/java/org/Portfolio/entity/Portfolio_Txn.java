@@ -65,7 +65,9 @@ public class Portfolio_Txn {
 	}
 	@Override
 	public String toString() {
-		return "User ["+this.Txn_id+ " "+this.userid+" "+this.symbol+" "+this.quantity+""+this.buyprice+"]";
+		return " "+this.Txn_id+ " "
+					   
+					   +this.symbol+" "+this.quantity+""+this.buyprice+" ";
 	}
 	
 }

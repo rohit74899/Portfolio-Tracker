@@ -73,3 +73,20 @@ Flow:
 - Hibernate and Db Are Both are Aware of Sequence Increment
 - Hibernate queries the sequence directly → no trigger confusion.
 - Both DB & Hibernate stay in sync (Hibernate knows the generated ID before insertion). 
+
+
+# 3. Problem : For User facing CRUD , Transaction fetching JPA/Hibernate.
+
+-user Simple CRUD Operations 
+-Getting ALL transactions 
+-can be handled well at Hibernate and JPA Level as Single Client Data is Involved.
+
+# 4. Problem : For Analytics (PNL,Complicated Analysis)
+ 
+
+where Complex Computation on Heavy Dataset in database is Involved on large dataset
+
+--Option A: DB Stored Procedures 
+
+--Option B: Data Warehouses(Kafka-->Spark/Flink)
+# Design Decision : DB Stored Procedures

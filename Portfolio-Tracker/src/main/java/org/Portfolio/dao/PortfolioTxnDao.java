@@ -124,6 +124,8 @@ public class PortfolioTxnDao {
 	}
 	
 	public Portfolio_Txn get_PortTxnByUser() {
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
 		
 		return null;
 	}
