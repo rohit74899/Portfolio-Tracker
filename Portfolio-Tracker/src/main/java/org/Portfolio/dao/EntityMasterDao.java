@@ -2,14 +2,16 @@ package org.Portfolio.dao;
 
 import java.util.Scanner;
 
+import org.Portfolio.dto.EntityMasterDTO;
 import org.Portfolio.entity.Entity_Master;
+import org.Portfolio.mapper.EntityMasterMapper;
 import org.Portfolio.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class EntityMasterDao {
 	
-	public Entity_Master getEntityData() {
+	public EntityMasterDTO getEntityData() {
 		
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
@@ -21,8 +23,10 @@ public class EntityMasterDao {
 		
 		Entity_Master e=session.get(Entity_Master.class, id);
 		
-		System.out.println(e);
-		return e;
+		EntityMasterDTO userDto= EntityMasterMapper.toDTO(e);
+
+		System.out.println(userDto);
+		return userDto;
 		
 	}
 	

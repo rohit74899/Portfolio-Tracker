@@ -32,6 +32,10 @@ public class Portfolio_Txn {
 		this.Txn_id = Txn_id;
 	}
 	
+	public int get_Txn_id() {
+		return this.Txn_id;
+	}
+	
 	public Entity_Master get_userid() {
 		return this.userid;
 	}
@@ -65,9 +69,7 @@ public class Portfolio_Txn {
 	}
 	@Override
 	public String toString() {
-		return " "+this.Txn_id+ " "
-					   
-					   +this.symbol+" "+this.quantity+""+this.buyprice+" ";
+		return " "+this.Txn_id+ " "+this.symbol+" "+this.quantity+""+this.buyprice+" ";
 	}
 	
 }
