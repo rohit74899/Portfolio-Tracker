@@ -15,7 +15,6 @@ public class Portfolio_Txn {
 	@Column(name = "pt_id")
 	int Txn_id;
 	
-	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="pt_user_id" ,referencedColumnName="user_id")//FK Column
 	Entity_Master userid;//Referencing to Entity Master

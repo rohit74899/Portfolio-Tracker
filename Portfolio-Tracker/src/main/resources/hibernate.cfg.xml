@@ -23,6 +23,5 @@
 			false
 		</property>
     	
-    	
 	</session-factory>
 </hibernate-configuration>
