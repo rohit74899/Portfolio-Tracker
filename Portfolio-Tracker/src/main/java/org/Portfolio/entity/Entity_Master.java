@@ -3,6 +3,7 @@ package org.Portfolio.entity;
 import java.util.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +29,7 @@ public class Entity_Master {
 	@Column(name = "email")
 	String email;
 	
-	@OneToMany(mappedBy="userid")
+	@OneToMany(mappedBy="userid" ,fetch = FetchType.LAZY)
 	List<Portfolio_Txn> Portfolio_details=new ArrayList<>();
 	
 	

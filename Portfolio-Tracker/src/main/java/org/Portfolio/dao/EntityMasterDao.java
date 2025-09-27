@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 
 public class EntityMasterDao {
 	
-	public EntityMasterDTO getEntityData() {
+	public EntityMasterDTO getEntityData() throws Exception {
 		
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
@@ -20,8 +20,17 @@ public class EntityMasterDao {
 		System.out.println("Enter the Id of the User !");
 		int id=sc.nextInt();
 		sc.nextLine();
+		Entity_Master e=null;
 		
-		Entity_Master e=session.get(Entity_Master.class, id);
+		try {
+			e=session.get(Entity_Master.class, id);
+		}
+		finally {
+			session.close();
+		}
+		if (e == null) {
+	        throw new Exception("No User With Id " + id + " exists!!");
+	    }
 		
 		EntityMasterDTO userDto= EntityMasterMapper.toDTO(e);
 

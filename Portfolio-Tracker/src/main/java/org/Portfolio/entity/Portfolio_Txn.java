@@ -2,6 +2,7 @@ package org.Portfolio.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -15,7 +16,7 @@ public class Portfolio_Txn {
 	int Txn_id;
 	
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="pt_user_id" ,referencedColumnName="user_id")//FK Column
 	Entity_Master userid;//Referencing to Entity Master
 	
