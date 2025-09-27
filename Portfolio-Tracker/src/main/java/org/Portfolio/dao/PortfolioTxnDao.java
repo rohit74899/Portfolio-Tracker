@@ -2,6 +2,7 @@ package org.Portfolio.dao;
 
 import java.util.Scanner;
 
+import org.Portfolio.dto.EntityMasterDTO;
 import org.Portfolio.entity.Entity_Master;
 import org.Portfolio.entity.Portfolio_Txn;
 import org.Portfolio.util.HibernateUtil;
@@ -13,7 +14,7 @@ import jakarta.persistence.Column;
 public class PortfolioTxnDao {
 	
 	public void insert_PortTxn() {
-		System.out.println("== Register Client ==");
+		System.out.println("== Inserting Portfolio Entry ==");
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
 		Scanner sc =new Scanner(System.in);
@@ -21,16 +22,9 @@ public class PortfolioTxnDao {
 		//Txn_id Will Come Through sequence
 		System.out.println("Enter txn_id :");
 		int TxnId = sc.nextInt(); sc.nextLine();
-		
-//		System.out.println("Enter user_id :");
-//		int userId = sc.nextInt(); sc.nextLine();
-		
-		Entity_Master entity= new EntityMasterDao().getEntityData();
-		if(entity == null) {
-			System.out.println("No User Found In the System!!");
-			session.close();
-			return;
-		}
+
+		//EntityMasterDTO entity= new EntityMasterDao().getuserDetails();
+		Entity_Master entity= new EntityMasterDao().getuserObj();
 		
 		System.out.println("Enter Symbol name :");
 		String symbol =sc.nextLine();
@@ -123,12 +117,11 @@ public class PortfolioTxnDao {
 		System.out.println(port_data+" Deleted From DB");
 	}
 	
-	public Portfolio_Txn get_PortTxnByUser() {
-		Session session= HibernateUtil.getSessionFactory().openSession();
-		
-		
-		return null;
-	}
+//	public Portfolio_Txn get_PortTxnByUser() {
+//		Session session= HibernateUtil.getSessionFactory().openSession();
+//		
+//		return null;
+//	}
 	public Portfolio_Txn get_PortTxnById() {
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
