@@ -39,7 +39,7 @@ public class App
         	switch(op) {
         	case 1:dd.insertEntity();
         		break;
-        	case 2:dd.getEntityData();
+        	case 2:dd.getuserDetails();
         		break;
         	case 3:dd.updateEntity();
         		break;

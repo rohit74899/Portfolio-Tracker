@@ -12,7 +12,29 @@ import org.hibernate.Transaction;
 
 public class EntityMasterDao {
 	
-	public EntityMasterDTO getEntityData() {
+	public Entity_Master getuserObj() {
+Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the Id of the User !");
+		int id=sc.nextInt();
+		sc.nextLine();
+		Entity_Master e=null;
+		
+		try {
+			e=session.get(Entity_Master.class, id);
+		}
+		finally {
+			session.close();
+		}
+		if (e == null) {
+	        throw new userNotFoundException("No User With Id " + id + " exists!!");
+	    }
+
+		return e;	
+	}
+	public EntityMasterDTO getuserWithPortfolio() {
 		
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
@@ -36,8 +58,58 @@ public class EntityMasterDao {
 		EntityMasterDTO userDto= EntityMasterMapper.toDTO(e);
 
 		System.out.println(userDto);
-		return userDto;
+		return userDto;	
+	}
+	
+	public EntityMasterDTO getuserDetails() {
+		Session session= HibernateUtil.getSessionFactory().openSession();
 		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the Id of the User !");
+		int id=sc.nextInt();
+		sc.nextLine();
+		Entity_Master e=null;
+		
+		try {
+			e=session.get(Entity_Master.class, id);
+		}
+		finally {
+			session.close();
+		}
+		if (e == null) {
+	        throw new userNotFoundException("No User With Id " + id + " exists!!");
+	    }
+		
+		EntityMasterDTO userDto= EntityMasterMapper.toDTO(e);
+		System.out.println(userDto);
+		return userDto;	
+	}
+	
+	public EntityMasterDTO getuserPortfolio() {
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the Id of the User !");
+		int id=sc.nextInt();
+		sc.nextLine();
+		Entity_Master e=null;
+		
+		try {
+			e=session.get(Entity_Master.class, id);
+		}
+		finally {
+			session.close();
+		}
+		if (e == null) {
+	        throw new userNotFoundException("No User With Id " + id + " exists!!");
+	    }
+		
+		EntityMasterDTO userDto= EntityMasterMapper.toDTO_GetPortfolio(e);
+
+		System.out.println(userDto);
+		return userDto;	
 	}
 	
 	public void insertEntity() {
@@ -79,7 +151,8 @@ public class EntityMasterDao {
 		Transaction transaction =session.beginTransaction();
 		Scanner sc =new Scanner(System.in);
 		System.out.println("== Update User ==");
-		Entity_Master user = getEntityData();
+		
+		Entity_Master user = getuserObj(); 
 		
 		System.out.println("Enter New Username (Leave Blank to Keep Old)");
 		String name=sc.nextLine();
@@ -108,7 +181,7 @@ public class EntityMasterDao {
 		System.out.println("== Register Client ==");
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
-		Entity_Master user = getEntityData();
+		Entity_Master user = getuserObj(); 
 		
 		Transaction transaction = session.beginTransaction();
 		
