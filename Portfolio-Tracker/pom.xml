@@ -39,9 +39,46 @@
 	    <version>7.1.0.Final</version>
 	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache -->
+	<dependency>
+	    <groupId>org.hibernate.orm</groupId>
+	    <artifactId>hibernate-jcache</artifactId>
+	    <version>7.1.1.Final</version>
+	</dependency>
 	
+	
+	<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+	<!--
+	<dependency>
+	    <groupId>org.ehcache</groupId>
+	    <artifactId>ehcache</artifactId>
+	    <version>3.11.1</version>
+	</dependency>
+	
+	
+	
+	<dependency>
+	    <groupId>javax.cache</groupId>
+	    <artifactId>cache-api</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	-->
+	<!--
+	<dependency>
+	    <groupId>org.glassfish.jaxb</groupId>
+	    <artifactId>jaxb-runtime</artifactId>
+	    <version>4.0.4</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>jakarta.xml.bind</groupId>
+	    <artifactId>jakarta.xml.bind-api</artifactId>
+	    <version>4.0.2</version>
+	</dependency>
+	-->
   </dependencies>
+  
+  
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
