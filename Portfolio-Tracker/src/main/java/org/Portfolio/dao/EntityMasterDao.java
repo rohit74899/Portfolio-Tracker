@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import org.Portfolio.dto.EntityMasterDTO;
 import org.Portfolio.entity.Entity_Master;
+import org.Portfolio.exception.userNotFoundException;
 import org.Portfolio.mapper.EntityMasterMapper;
 import org.Portfolio.util.HibernateUtil;
 import org.hibernate.Session;
@@ -11,7 +12,7 @@ import org.hibernate.Transaction;
 
 public class EntityMasterDao {
 	
-	public EntityMasterDTO getEntityData() throws Exception {
+	public EntityMasterDTO getEntityData() {
 		
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		
@@ -29,7 +30,7 @@ public class EntityMasterDao {
 			session.close();
 		}
 		if (e == null) {
-	        throw new Exception("No User With Id " + id + " exists!!");
+	        throw new userNotFoundException("No User With Id " + id + " exists!!");
 	    }
 		
 		EntityMasterDTO userDto= EntityMasterMapper.toDTO(e);
